@@ -82,12 +82,22 @@ function addBookToDOM(title, author, pages, read, position){
   let isRead = document.createElement("div");
   isRead.className = "isRead";
   isRead.textContent = "Read: " + read;
+
+  let toggleRead = document.createElement("button");
+  toggleRead.className = "toggleRead";
+  toggleRead.textContent = "Toggle read state";
+  toggleRead.dataset.index = position;
   
-  item.append(removeButton, itemTitle, itemAuthor, itemPages, isRead);
+  item.append(removeButton, itemTitle, itemAuthor, itemPages, isRead, toggleRead);
   library.appendChild(item);
 
   removeButton.addEventListener("click", (e) => {
     myLibrary.splice(e.target.dataset.index, 1);
     updateLibraryOnPage();
   }, {once: true});
+
+  toggleRead.addEventListener("click", (e) => {
+    myLibrary[e.target.dataset.index].isRead = !myLibrary[e.target.dataset.index].isRead;
+    updateLibraryOnPage();
+  });
 }
