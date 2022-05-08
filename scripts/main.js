@@ -24,10 +24,11 @@ submitAddBook.addEventListener("click", () => {
   if (inputFields[0].value == "" || inputFields[1].value == "" || inputFields[2].value == ""){
     alert("Please fill in all fields");
   } else {
-    addBookToLibrary();
+    addBookToLibrary(inputFields[0].value, inputFields[1].value, inputFields[2].value, inputFields[3].checked);
     inputFields.forEach(field => {
       field.value = "";
     });
+    inputFields[3].checked = false;
     modal.style.display = "none";
   }
   
@@ -45,11 +46,7 @@ const Book = {
 }
 
 //Functions
-function addBookToLibrary(){
-  let title = prompt("title");
-  let author = prompt("author");
-  let pages = prompt("pages");
-  let isRead = prompt("isRead");
+function addBookToLibrary(title, author, pages, isRead){
   let tempBook = Object.create(Book).init(title, author, pages, isRead);
   myLibrary.push(tempBook);
   updateLibraryOnPage();
@@ -80,7 +77,7 @@ function addBookToDOM(title, author, pages, read){
 
   let isRead = document.createElement("div");
   isRead.className = "isRead";
-  isRead.textContent = read;
+  isRead.textContent = "Read: " + read;
   
   item.append(itemTitle, itemAuthor, itemPages, isRead);
   library.appendChild(item);
