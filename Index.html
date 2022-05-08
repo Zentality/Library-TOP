@@ -10,17 +10,17 @@
 </head>
 <body>
   <ul class="library"></ul>
-  <button class="addBook">Add Book</button>
+  <button id="addBook">Add Book</button>
 
   <div id="modalContainer">
     <form action="" id="newBookModal">
       <button id="closeModal" type="button">&times;</button>
       <div>Add a new book</div>
-      <label>Title: <input type="text" name="title"></label>
-      <label>Author: <input type="text" name="author"></label>
-      <label>Pages: <input type="text" name="pages"></label>
-      <label>Read: <input type="checkbox" name="isRead"></label>
-      <button>Add</button>
+      <label>Title: <input type="text" name="title" class="inputField"></label>
+      <label>Author: <input type="text" name="author" class="inputField"></label>
+      <label>Pages: <input type="text" name="pages" class="inputField"></label>
+      <label>Read: <input type="checkbox" name="isRead" class="inputField"></label>
+      <button id="submitBook" type="button">Add</button>
     </form>
   </div>
 

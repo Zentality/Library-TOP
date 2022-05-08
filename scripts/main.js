@@ -3,21 +3,30 @@ let myLibrary = [];
 //Query selectors
 const library = document.querySelector(".library");
 const modal = document.querySelector("#modalContainer");
-const addButton = document.querySelector(".addBook");
-const closeModalButton = document.querySelector("#closeModal")
+const inputFields = document.querySelectorAll(".inputField");
+const addButton = document.querySelector("#addBook");
+const closeModalButton = document.querySelector("#closeModal");
+const submitAddBook = document.querySelector("#submitBook");
 
 //Event handlers
 addButton.addEventListener("click", () => {
   modal.style.display = "flex";
-})
+});
 closeModalButton.addEventListener("click", () => {
   modal.style.display = "none";
-})
+});
 window.addEventListener("click", (e) => {
   if (e.target == modal){
     modal.style.display = "none";
   }
-})
+});
+submitAddBook.addEventListener("click", () => {
+  addBookToLibrary();
+  inputFields.forEach(field => {
+    field.value = "";
+  });
+  modal.style.display = "none";
+});
 
 //Objects
 const Book = {
@@ -58,7 +67,7 @@ function addBookToDOM(title, author, pages, read){
 
   let itemAuthor = document.createElement("div");
   itemAuthor.className = "author";
-  itemAuthor.textContent = "Atuhor: " + author;
+  itemAuthor.textContent = "Author: " + author;
 
   let itemPages = document.createElement("div");
   itemPages.className = "pages";
