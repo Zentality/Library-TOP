@@ -69,11 +69,11 @@ function addBookToDOM(title, author, pages, read, position){
 
   let itemTitle = document.createElement("div");
   itemTitle.className = "title";
-  itemTitle.textContent = "Title: " + title;
+  itemTitle.textContent = `"${title}"`;
 
   let itemAuthor = document.createElement("div");
   itemAuthor.className = "author";
-  itemAuthor.textContent = "Author: " + author;
+  itemAuthor.textContent = "By: " + author;
 
   let itemPages = document.createElement("div");
   itemPages.className = "pages";
