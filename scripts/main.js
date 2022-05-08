@@ -2,13 +2,17 @@ let myLibrary = [];
 
 //Query selectors
 const library = document.querySelector(".library");
-const addButton = document.querySelector(".addBook");
 const modal = document.querySelector("#modalContainer");
+const addButton = document.querySelector(".addBook");
+const closeModalButton = document.querySelector("#closeModal")
 
 //Event handlers
 addButton.addEventListener("click", () => {
   modal.style.display = "flex";
-})
+});
+closeModalButton.addEventListener("click", () => {
+  modal.style.display = "none";
+});
 
 //Objects
 const Book = {
