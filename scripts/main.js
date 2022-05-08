@@ -56,7 +56,6 @@ function updateLibraryOnPage(){
   library.innerHTML = "";
   myLibrary.forEach((book, i) => {
     addBookToDOM(book.title, book.author, book.pages, book.isRead, i);
-    console.log(i);
   });
 }
 function addBookToDOM(title, author, pages, read, position){
@@ -65,7 +64,6 @@ function addBookToDOM(title, author, pages, read, position){
   let removeButton = document.createElement("button");
   removeButton.className = "removeBook";
   removeButton.innerHTML = `X`;
-  removeButton.dataset.index = position;
 
   let itemTitle = document.createElement("div");
   itemTitle.className = "title";
@@ -86,18 +84,18 @@ function addBookToDOM(title, author, pages, read, position){
   let toggleRead = document.createElement("button");
   toggleRead.className = "toggleRead";
   toggleRead.textContent = "Toggle read state";
-  toggleRead.dataset.index = position;
   
   item.append(removeButton, itemTitle, itemAuthor, itemPages, isRead, toggleRead);
+  item.dataset.index = position;
   library.appendChild(item);
 
   removeButton.addEventListener("click", (e) => {
-    myLibrary.splice(e.target.dataset.index, 1);
+    myLibrary.splice(e.target.parentNode.dataset.index, 1);
     updateLibraryOnPage();
   }, {once: true});
 
   toggleRead.addEventListener("click", (e) => {
-    myLibrary[e.target.dataset.index].isRead = !myLibrary[e.target.dataset.index].isRead;
+    myLibrary[e.target.parentNode.dataset.index].isRead = !myLibrary[e.target.parentNode.dataset.index].isRead;
     updateLibraryOnPage();
   });
 }
