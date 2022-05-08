@@ -14,12 +14,26 @@
 
   <div id="modalContainer">
     <form action="" id="newBookModal">
-      <button id="closeModal" type="button">&times;</button>
-      <div>Add a new book</div>
-      <label>Title: <input type="text" name="title" class="inputField"></label>
-      <label>Author: <input type="text" name="author" class="inputField"></label>
-      <label>Pages: <input type="number" name="pages" class="inputField"></label>
-      <label>Read: <input type="checkbox" name="isRead" class="inputField"></label>
+      
+      <div class="inputHeader"><span>Add a new book </span><button id="closeModal" type="button">&times;</button></div>
+
+      <div class="input">
+        <label>Title: </label>
+        <input type="text" name="title" class="inputField">
+      </div>
+      <div class="input">
+        <label>Author: </label>
+        <input type="text" name="author" class="inputField">
+      </div>
+      <div class="input">
+        <label>Pages: </label>
+        <input type="number" name="pages" class="inputField">
+      </div>
+      <div class="inputCheckbox">
+        <label>Read: </label>
+        <input type="checkbox" name="isRead" class="inputField">
+      </div>
+
       <button id="submitBook" type="button">Add</button>
     </form>
   </div>

@@ -10,6 +10,10 @@ li {
 
 
 
+button:hover {
+  cursor: pointer;
+}
+
 #modalContainer {
   display: none;
   position: fixed;
@@ -25,8 +29,35 @@ li {
 }
 
 #modalContainer>form {
-  background-color: aqua;
-  padding: 32px;
+  background-color: rgb(170, 170, 170);
+  border: 1px solid rgb(150,150,150);
+  padding: 24px;
   display: flex;
   flex-direction: column;
+  gap: 16px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 8px 2px rgba(0,0,0,0.3);
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#closeModal {
+  display: flex;
+  padding: 0px;
+  width: 24px;
+  height: 24px;
+  border: 2px solid black;
+  border-radius: 100%;
+  font-size: 1.5em;
+  align-items: center;
+  justify-content: center;
 }
