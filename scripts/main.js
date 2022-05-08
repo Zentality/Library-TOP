@@ -10,20 +10,19 @@ const Book = {
   }
 }
 
-function bookToCreate(){
+function addBookToLibrary(){
   let author = prompt("author");
   let title = prompt("title");
   let pages = prompt("pages");
   let isRead = true;
   let tempBook = Object.create(Book).init(author, title, pages, isRead);
+  myLibrary.push(tempBook);
   return tempBook;
 }
 
-function addBookToLibrary(){
+ 
 
-}
+addBookToLibrary();
+addBookToLibrary();
 
-let book1 = bookToCreate();
-let book2 = bookToCreate();
-
-console.log(book1, book2);
+console.log(myLibrary);
