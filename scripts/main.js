@@ -54,16 +54,18 @@ function addBookToLibrary(title, author, pages, isRead){
 }
 function updateLibraryOnPage(){
   library.innerHTML = "";
-  myLibrary.forEach(book => {
-    addBookToDOM(book.title, book.author, book.pages, book.isRead);
+  myLibrary.forEach((book, i) => {
+    addBookToDOM(book.title, book.author, book.pages, book.isRead, i);
+    console.log(i);
   });
 }
-function addBookToDOM(title, author, pages, read){
+function addBookToDOM(title, author, pages, read, position){
   let item = document.createElement("li");
-
+  
   let removeButton = document.createElement("button");
   removeButton.className = "removeBook";
   removeButton.innerHTML = `&times;`;
+  removeButton.dataset.index = position;
 
   let itemTitle = document.createElement("div");
   itemTitle.className = "title";
@@ -83,4 +85,9 @@ function addBookToDOM(title, author, pages, read){
   
   item.append(removeButton, itemTitle, itemAuthor, itemPages, isRead);
   library.appendChild(item);
+
+  removeButton.addEventListener("click", (e) => {
+    myLibrary.splice(e.target.dataset.index, 1);
+    updateLibraryOnPage();
+  })
 }
