@@ -89,5 +89,5 @@ function addBookToDOM(title, author, pages, read, position){
   removeButton.addEventListener("click", (e) => {
     myLibrary.splice(e.target.dataset.index, 1);
     updateLibraryOnPage();
-  })
+  }, {once: true});
 }
