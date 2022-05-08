@@ -9,10 +9,15 @@ const closeModalButton = document.querySelector("#closeModal")
 //Event handlers
 addButton.addEventListener("click", () => {
   modal.style.display = "flex";
-});
+})
 closeModalButton.addEventListener("click", () => {
   modal.style.display = "none";
-});
+})
+window.addEventListener("click", (e) => {
+  if (e.target == modal){
+    modal.style.display = "none";
+  }
+})
 
 //Objects
 const Book = {
