@@ -21,11 +21,16 @@ window.addEventListener("click", (e) => {
   }
 });
 submitAddBook.addEventListener("click", () => {
-  addBookToLibrary();
-  inputFields.forEach(field => {
-    field.value = "";
-  });
-  modal.style.display = "none";
+  if (inputFields[0].value == "" || inputFields[1].value == "" || inputFields[2].value == ""){
+    alert("Please fill in all fields");
+  } else {
+    addBookToLibrary();
+    inputFields.forEach(field => {
+      field.value = "";
+    });
+    modal.style.display = "none";
+  }
+  
 });
 
 //Objects
