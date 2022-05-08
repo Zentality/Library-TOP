@@ -52,16 +52,18 @@ function addBookToLibrary(title, author, pages, isRead){
   updateLibraryOnPage();
   return tempBook;
 }
-
 function updateLibraryOnPage(){
   library.innerHTML = "";
   myLibrary.forEach(book => {
     addBookToDOM(book.title, book.author, book.pages, book.isRead);
   });
 }
-
 function addBookToDOM(title, author, pages, read){
   let item = document.createElement("li");
+
+  let removeButton = document.createElement("button");
+  removeButton.className = "removeBook";
+  removeButton.innerHTML = `&times;`;
 
   let itemTitle = document.createElement("div");
   itemTitle.className = "title";
@@ -79,6 +81,6 @@ function addBookToDOM(title, author, pages, read){
   isRead.className = "isRead";
   isRead.textContent = "Read: " + read;
   
-  item.append(itemTitle, itemAuthor, itemPages, isRead);
+  item.append(removeButton, itemTitle, itemAuthor, itemPages, isRead);
   library.appendChild(item);
 }
