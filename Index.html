@@ -9,33 +9,33 @@
   <script src="scripts/main.js" defer></script>
 </head>
 <body>
-  <ul class="library"></ul>
-  <button id="addBook">Add Book</button>
 
-  <div id="modalContainer">
-    <form action="" id="newBookModal">
-      
-      <div class="inputHeader"><span>Add a new book </span><button id="closeModal" type="button">&times;</button></div>
-
-      <div class="input">
-        <label>Title: </label>
-        <input type="text" name="title" class="inputField">
-      </div>
-      <div class="input">
-        <label>Author: </label>
-        <input type="text" name="author" class="inputField">
-      </div>
-      <div class="input">
-        <label>Pages: </label>
-        <input type="number" name="pages" class="inputField">
-      </div>
-      <div class="inputCheckbox">
-        <label>Read: </label>
-        <input type="checkbox" name="isRead" class="inputField">
-      </div>
-
-      <button id="submitBook" type="button">Add</button>
-    </form>
+  <div class="container">
+    <ul class="library"></ul>
+    <button id="addBook">Add Book</button>
+    <div id="modalContainer">
+      <form action="" id="newBookModal">
+    
+        <div class="inputHeader"><span>Add a new book </span><button id="closeModal" type="button">&times;</button></div>
+        <div class="input">
+          <label>Title: </label>
+          <input type="text" name="title" class="inputField">
+        </div>
+        <div class="input">
+          <label>Author: </label>
+          <input type="text" name="author" class="inputField">
+        </div>
+        <div class="input">
+          <label>Pages: </label>
+          <input type="number" name="pages" class="inputField">
+        </div>
+        <div class="inputCheckbox">
+          <label>Read: </label>
+          <input type="checkbox" name="isRead" class="inputField">
+        </div>
+        <button id="submitBook" type="button">Add</button>
+      </form>
+    </div>
   </div>
 
 </body>

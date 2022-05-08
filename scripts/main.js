@@ -64,7 +64,7 @@ function addBookToDOM(title, author, pages, read, position){
   
   let removeButton = document.createElement("button");
   removeButton.className = "removeBook";
-  removeButton.innerHTML = `&times;`;
+  removeButton.innerHTML = `X`;
   removeButton.dataset.index = position;
 
   let itemTitle = document.createElement("div");
