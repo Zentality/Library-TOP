@@ -35,19 +35,18 @@ submitAddBook.addEventListener("click", () => {
 });
 
 //Objects
-const Book = {
-  init: function(title, author, pages, isRead){
+class Book {
+  constructor(title, author, pages, isRead){
     this.title = title
     this.author = author
     this.pages = pages
     this.isRead = isRead
-    return this;
   }
 }
 
 //Functions
 function addBookToLibrary(title, author, pages, isRead){
-  let tempBook = Object.create(Book).init(title, author, pages, isRead);
+  let tempBook = new Book(title, author, pages, isRead);
   myLibrary.push(tempBook);
   updateLibraryOnPage();
   return tempBook;
